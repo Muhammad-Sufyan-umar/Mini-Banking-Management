@@ -16,22 +16,22 @@ class Bank:
 
     
     def check(self):
-        print( f"Current balance is {self.balance}")
+        print( f"Current balance is {self.balance}\n")
 
     def deposit(self):
         amount=int(input("Enter amount you want to deposit: "))
         self.balance+=amount
-        print("Deposit Done")
+        print("Deposit Done ✔ \n")
     
 
     def withdraw(self):
-        amount=int(input("Enter amount you want to withdraw"))
+        amount=int(input("Enter amount you want to withdraw: "))
         if self.balance<amount:
-            print("insufficient balance ")
+            print("insufficient balance 😒\n")
         else:
             
             self.balance-=amount
-            print("Withdrawl Done")
+            print("Withdrawl Done ✔ \n")
 
 bank=[]
 
@@ -46,7 +46,7 @@ def acc_exist(ac_no: int):
 
 while True:
     print("1. Create account.")
-    print("2.Check account detail")
+    print("2.Check account details")
     print("3.Deposit Amount")
     print("4.Withdraw Amount")
     print("5.Transfer Amount")
@@ -59,7 +59,7 @@ while True:
     if choice==1:
         obj=Bank()
         bank.append(obj)
-        #print(bank)
+       
    
    #Check accounts details
     elif choice==2:
@@ -75,7 +75,7 @@ while True:
         if len(bank)==0:
             print("no accounts created yet")
         else:
-            ac_no=int(input("Enter account numer:"))
+            ac_no=int(input("Enter account number:"))
             for i in bank:
                 if i.acc_num==ac_no:
                     i.deposit()
@@ -93,10 +93,10 @@ while True:
                     i.withdraw()
                     break
     elif choice==5:
-        from_acc_no=int(input("Enter acc_numer from" \
-        " which U want to tranfer: "))
+        from_acc_no=int(input("Enter acc_number from" \
+        " which U want to transfer: "))
 
-        to_acc_num=int(input("Enter acc_number to " \
+        to_acc_num=int(input("Enter acc_number in " \
         " which U want to transfer: "))
         
         
@@ -109,7 +109,7 @@ while True:
 
             if from_acc_obj.balance<transfer_money:
 
-                print("insuffucient Balance")
+                print("insuffucient Balance 😒\n")
 
             else:
                 from_acc_obj.balance-=transfer_money
@@ -121,6 +121,7 @@ while True:
 
     #Exit 
     elif choice==6:
+        print("Thank you for using our services✨")
         break
     else:
         print("Invalid Command")
