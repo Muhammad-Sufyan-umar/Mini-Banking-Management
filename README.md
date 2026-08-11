@@ -13,6 +13,7 @@ This project allows users to create bank accounts, check account details, deposi
 * 💸 Withdraw money
 * 🔄 Transfer money between accounts
 * ⚠️ Check for insufficient balance
+* ⛔ Delete Account 
 * ❌ Handle invalid menu choices
 * 🚪 Exit the banking system
 
@@ -67,7 +68,8 @@ When the program starts, the following menu is displayed:
 3. Deposit Amount
 4. Withdraw Amount
 5. Transfer Amount
-6. Exit
+6. Delete account
+&. Exit
 ```
 
 ## 💡 Example
@@ -108,7 +110,6 @@ Some possible improvements for this project:
 * Validate phone numbers and amounts
 * Save accounts to a file or database
 * Add transaction history
-* Add account deletion
 * Add account search
 * Improve error handling
 * Add a graphical user interface (GUI)
