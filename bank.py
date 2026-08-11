@@ -50,7 +50,8 @@ while True:
     print("3.Deposit Amount")
     print("4.Withdraw Amount")
     print("5.Transfer Amount")
-    print("6.Exit \n")
+    print("6.Delete Account")
+    print("7.Exit \n")
 
     choice=int(input("Enter your Choice: "))
 
@@ -92,6 +93,10 @@ while True:
                 if i.acc_num==ac_no:
                     i.withdraw()
                     break
+
+    
+
+    #Transfer Money
     elif choice==5:
         from_acc_no=int(input("Enter acc_number from" \
         " which U want to transfer: "))
@@ -114,13 +119,27 @@ while True:
             else:
                 from_acc_obj.balance-=transfer_money
                 to_acc_obj.balance+=transfer_money
-        
-            
+          
         else:
             print("Account doesn't exists")
 
-    #Exit 
+    #Delete Account
     elif choice==6:
+            if len(bank)==0:
+                print("No account created yet")
+            else:
+                ac_no=int(input("Enter account number: "))
+                for i in bank:
+                    if i.acc_num==ac_no:
+                        bank.remove(i)
+                        print("Account Deleted Successfully ✔ \n")
+                        break
+                    else:
+                        print("Account doesn't exists")
+                        break
+
+    #Exit 
+    elif choice==7:
         print("Thank you for using our services✨")
         break
     else:
