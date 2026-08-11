@@ -45,6 +45,8 @@ def acc_exist(ac_no: int):
 
 
 while True:
+
+    print("\n==============Welcome to Bank Management System==============\n")
     print("1. Create account.")
     print("2.Check account details")
     print("3.Deposit Amount")
@@ -54,6 +56,7 @@ while True:
     print("7.Exit \n")
 
     choice=int(input("Enter your Choice: "))
+    print("---------------------------------------------------------------\n")
 
    
    # Creating Account
@@ -65,7 +68,7 @@ while True:
    #Check accounts details
     elif choice==2:
         if len(bank)==0:
-            print("No account created yet")
+            print("\n No account created yet")
         else:
             for account in bank:
                 account.show_info()
@@ -74,7 +77,7 @@ while True:
     # Deposit Money
     elif choice==3:
         if len(bank)==0:
-            print("no accounts created yet")
+            print("\n No account created yet")
         else:
             ac_no=int(input("Enter account number:"))
             for i in bank:
@@ -86,7 +89,7 @@ while True:
     #Withdrawl Money
     elif choice==4:
         if len(bank)==0:
-            print("No account created yet")
+            print("\n No account created yet")
         else:
             ac_no=int(input("Enter account number: "))
             for i in bank:
@@ -114,19 +117,19 @@ while True:
 
             if from_acc_obj.balance<transfer_money:
 
-                print("insuffucient Balance 😒\n")
+                print("\n Insufficient Balance 😒\n")
 
             else:
                 from_acc_obj.balance-=transfer_money
                 to_acc_obj.balance+=transfer_money
           
         else:
-            print("Account doesn't exists")
+            print("\n Account doesn't exists")
 
     #Delete Account
     elif choice==6:
             if len(bank)==0:
-                print("No account created yet")
+                print("\n No account created yet")
             else:
                 ac_no=int(input("Enter account number: "))
                 for i in bank:
@@ -135,7 +138,7 @@ while True:
                         print("Account Deleted Successfully ✔ \n")
                         break
                     else:
-                        print("Account doesn't exists")
+                        print("\n Account doesn't exists")
                         break
 
     #Exit 
@@ -143,5 +146,5 @@ while True:
         print("Thank you for using our services✨")
         break
     else:
-        print("Invalid Command")
+        print("\n Invalid Command")
     
